@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 // Expess app can use diffrent templating engines but we will use ejs
 // run npm i ejs from commandline
@@ -7,7 +8,7 @@ const app = express();
 //The templates folder is /views as default but you can change it by
 //app.set('views', [yourpath])
 app.set('view engine', 'ejs');
-
+app.set('views', path.join(__dirname, '/views'));
 app.get('/', (req, res) => {
   res.render('home.ejs');
 });
