@@ -1,0 +1,14 @@
+{
+  "name": "myfirstapp",
+  "version": "1.0.0",
+  "description": "This is boilerplate for express app",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
