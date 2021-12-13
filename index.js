@@ -12,6 +12,9 @@ app.set('views', path.join(__dirname, '/views'));
 app.get('/', (req, res) => {
   res.render('home.ejs');
 });
+
+//
+app.use(express.static(path.join(__dirname, 'public')));
 // We can pass data to the template by second argument to the render method
 app.get('/name', (req, res) => {
   const myname = 'emin'; //This way we can separete logic and view
