@@ -17,6 +17,10 @@ app.get('/name', (req, res) => {
   const myname = 'emin'; //This way we can separete logic and view
   res.render('name.ejs', { name: myname }); // This value key pairs can be same name, first one is used in ejs as refrence
 });
+app.get('/rand', (req, res) => {
+  const num = Math.floor(Math.random() * 10 + 1);
+  res.render('rand.ejs', { rand: num });
+});
 
 // app.use((req, res) => {
 //   console.log('Express app get a request');
