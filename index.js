@@ -21,7 +21,10 @@ app.get('/rand', (req, res) => {
   const num = Math.floor(Math.random() * 10 + 1);
   res.render('rand.ejs', { rand: num });
 });
-
+app.get('/cats', (req, res) => {
+  const cats = ['Ronny', 'Jane', 'Jack', 'Mild', 'Wild'];
+  res.render('cats.ejs', { cats });
+});
 // app.use((req, res) => {
 //   console.log('Express app get a request');
 //   res.send("You get this response from express");
@@ -30,9 +33,7 @@ app.get('/rand', (req, res) => {
 // We coment our above line because once you respond the request it is over, other lines wont run.
 
 // app.get(path, callback func) is the syntax for get requests
-app.get('/cats', (req, res) => {
-  res.send('Meow');
-});
+
 app.get('/dogs', (req, res) => {
   res.send('Woof');
 });
