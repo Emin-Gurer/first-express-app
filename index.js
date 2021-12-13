@@ -1,5 +1,10 @@
-const express = require('express');
+const express = require("express");
 const app = express();
+
+// Expess app can use diffrent templating engines but we will use ejs
+// run npm i ejs from commandline
+//We dont have to require ejs, express will do it behind the scenes for us
+app.set("view engine", "ejs");
 
 // app.use((req, res) => {
 //   console.log('Express app get a request');
@@ -9,23 +14,23 @@ const app = express();
 // We coment our above line because once you respond the request it is over, other lines wont run.
 
 // app.get(path, callback func) is the syntax for get requests
-app.get('/', (req, res) => {
-  res.send('This is your root route');
+app.get("/", (req, res) => {
+  res.send("This is your root route");
 });
-app.get('/cats', (req, res) => {
-  res.send('Meow');
+app.get("/cats", (req, res) => {
+  res.send("Meow");
 });
-app.get('/dogs', (req, res) => {
-  res.send('Woof');
+app.get("/dogs", (req, res) => {
+  res.send("Woof");
 });
-app.get('/topic/:topicname', (req, res) => {
+app.get("/topic/:topicname", (req, res) => {
   const { topicname } = req.params;
   res.send(`You are looking into ${topicname} topic`);
 });
 //To create generic path for lots of diffrent paths we use columns as above
 // /topic/:topicname
 
-app.get('/search', (req, res) => {
+app.get("/search", (req, res) => {
   //URL queries is used like www.fakeurl.com/search?query=catnames?sort=descending
   //req.query is all of the queries in the URL ,
   //There might be more than one query in the URL
@@ -34,16 +39,16 @@ app.get('/search', (req, res) => {
   console.log(req.query);
   const { searchstring } = req.query;
   if (!searchstring) {
-    res.send('Nothing found if nothing searched');
+    res.send("Nothing found if nothing searched");
   } else {
     res.send(`You are searching for ${searchstring}`);
   }
 });
 
-app.get('*', (req, res) => {
-  res.send('This is for all another routes');
+app.get("*", (req, res) => {
+  res.send("This is for all another routes");
 });
 //This route should be at the end of the routes because it matches with all routes and rest of routes will be ignored
 app.listen(8080, () => {
-  console.log('Express app is listening on port 8080');
+  console.log("Express app is listening on port 8080");
 });
