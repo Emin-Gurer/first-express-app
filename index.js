@@ -12,6 +12,11 @@ app.set('views', path.join(__dirname, '/views'));
 app.get('/', (req, res) => {
   res.render('home.ejs');
 });
+// We can pass data to the template by second argument to the render method
+app.get('/name', (req, res) => {
+  const myname = 'emin'; //This way we can separete logic and view
+  res.render('name.ejs', { name: myname }); // This value key pairs can be same name, first one is used in ejs as refrence
+});
 
 // app.use((req, res) => {
 //   console.log('Express app get a request');
