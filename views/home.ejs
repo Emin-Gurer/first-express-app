@@ -1,57 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- We served static assets by app.use and we can directly link them to the page -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/js/bootstrap.bundle.min.js" />
-    <!-- We served static assets by app.use and we can directly link them to the page -->
-    <title>Home</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Express App</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/rand">Random</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/name">Name</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <% const mynum = 4 + 5 %>
-    <h1>Home page <%= mynum %></h1>
-    <p>We can use JS in HTML thanks to EJS</p>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet tempore,
-      quae corporis quis numquam commodi officiis voluptates mollitia.
-      Reprehenderit tenetur, tempore commodi exercitationem adipisci nobis
-      facere. Amet provident impedit magni adipisci voluptatem fugit minus
-      cupiditate quos neque? Praesentium provident eaque nihil minus? Possimus
-      dicta excepturi adipisci fugiat sequi! Possimus porro necessitatibus
-      aliquam consequatur illum aperiam molestias similique sit? Rem eos
-      officiis, nostrum ab, vel molestias pariatur quasi neque maxime cupiditate
-      sit earum recusandae. Quidem dicta blanditiis deserunt doloremque sunt ut!
-    </p>
-  </body>
-</html>
+<%- include('./partials/header.ejs') %>
+<body>
+  <%- include('./partials/navbar.ejs'); %> <% const mynum = 4 + 5 %>
+  <h1>Home page <%= mynum %></h1>
+  <p>We can use JS in HTML thanks to EJS</p>
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet tempore, quae
+    corporis quis numquam commodi officiis voluptates mollitia. Reprehenderit
+    tenetur, tempore commodi exercitationem adipisci nobis facere. Amet
+    provident impedit magni adipisci voluptatem fugit minus cupiditate quos
+    neque? Praesentium provident eaque nihil minus? Possimus dicta excepturi
+    adipisci fugiat sequi! Possimus porro necessitatibus aliquam consequatur
+    illum aperiam molestias similique sit? Rem eos officiis, nostrum ab, vel
+    molestias pariatur quasi neque maxime cupiditate sit earum recusandae.
+    Quidem dicta blanditiis deserunt doloremque sunt ut!
+  </p>
+</body>
+<%- include('./partials/footer.ejs') %>
